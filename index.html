@@ -14,7 +14,6 @@
     --cream2:#E0DDD4;
     --ink:#161510;
     --gold:#B98B52;
-    --danger:#8C3B2E;
   }
   *{box-sizing:border-box; -webkit-tap-highlight-color: transparent;}
   html,body{margin:0; padding:0;}
@@ -30,181 +29,113 @@
     justify-content:center;
     padding:28px 16px 60px;
   }
-  .wrap{ width:100%; max-width:440px; }
+  .wrap{ width:100%; max-width:460px; }
 
-  .topbar{
-    display:flex; align-items:baseline; justify-content:space-between;
-    margin-bottom:18px;
-  }
-  .brand{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:22px;
-    letter-spacing:0.01em;
-    color:var(--olive);
-  }
+  .topbar{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:18px; }
+  .brand{ font-family:'Fraunces', serif; font-weight:600; font-size:22px; color:var(--olive); }
   .brand span{ color:var(--terracotta); }
   .lang-toggle{
-    border:1px solid var(--olive);
-    background:transparent;
-    color:var(--olive);
-    font-family:'Manrope', sans-serif;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:0.06em;
-    padding:6px 12px;
-    border-radius:20px;
-    cursor:pointer;
+    border:1px solid var(--olive); background:transparent; color:var(--olive);
+    font-family:'Manrope', sans-serif; font-size:12px; font-weight:700; letter-spacing:0.06em;
+    padding:6px 12px; border-radius:20px; cursor:pointer;
   }
   .lang-toggle:active{ background:var(--olive); color:var(--cream); }
 
   .card{
-    background:var(--cream);
-    border-radius:14px;
-    padding:26px 22px 22px;
-    position:relative;
+    background:var(--cream); border-radius:14px; padding:26px 22px 22px; position:relative;
     box-shadow:0 18px 40px -18px rgba(22,21,16,0.35);
   }
-  /* receipt perforation motif — the signature element */
   .card::before{
-    content:"";
-    position:absolute;
-    top:-1px; left:16px; right:16px; height:1px;
+    content:""; position:absolute; top:-1px; left:16px; right:16px; height:1px;
     background-image:linear-gradient(to right, var(--ink) 40%, transparent 0%);
-    background-size:10px 1px;
-    opacity:0.15;
+    background-size:10px 1px; opacity:0.15;
   }
-  .card::after{
-    content:"";
-    position:absolute; left:-9px; top:-9px; width:18px; height:18px;
-    background:var(--cream2); border-radius:50%;
-  }
-  .notch-r{
-    content:"";
-    position:absolute; right:-9px; top:-9px; width:18px; height:18px;
-    background:var(--cream2); border-radius:50%;
-  }
+  .card::after{ content:""; position:absolute; left:-9px; top:-9px; width:18px; height:18px; background:var(--cream2); border-radius:50%; }
+  .notch-r{ content:""; position:absolute; right:-9px; top:-9px; width:18px; height:18px; background:var(--cream2); border-radius:50%; }
 
-  .eyebrow{
-    font-family:'JetBrains Mono', monospace;
-    font-size:11px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--terracotta);
-    margin-bottom:4px;
-  }
-  h1{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:26px;
-    margin:0 0 22px;
-    color:var(--ink);
-  }
+  .eyebrow{ font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--terracotta); margin-bottom:4px; }
+  h1{ font-family:'Fraunces', serif; font-weight:600; font-size:24px; margin:0 0 18px; }
+  h2.section{ font-family:'Manrope', sans-serif; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--olive); margin:22px 0 10px; display:flex; align-items:center; gap:8px; }
+  h2.section::after{ content:""; flex:1; height:1px; background:var(--cream2); }
 
-  .field{ margin-bottom:16px; }
-  .field label{
-    display:block;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:0.03em;
-    text-transform:uppercase;
-    color:var(--olive);
-    margin-bottom:6px;
-  }
+  .field{ margin-bottom:14px; }
+  .field label{ display:block; font-size:12px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase; color:var(--olive); margin-bottom:6px; }
   select, input[type=text], input[type=number], input[type=date]{
-    width:100%;
-    padding:13px 12px;
-    border:1.5px solid var(--cream2);
-    background:#fff;
-    border-radius:8px;
-    font-family:'Manrope', sans-serif;
-    font-size:16px;
-    color:var(--ink);
-    outline:none;
-    appearance:none;
-    -webkit-appearance:none;
+    width:100%; padding:13px 12px; border:1.5px solid var(--cream2); background:#fff; border-radius:8px;
+    font-family:'Manrope', sans-serif; font-size:16px; color:var(--ink); outline:none; appearance:none; -webkit-appearance:none;
   }
   select{
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1L7 7L13 1' stroke='%234A4233' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-    background-repeat:no-repeat;
-    background-position:right 14px center;
-    padding-right:36px;
+    background-repeat:no-repeat; background-position:right 14px center; padding-right:36px;
   }
   select:focus, input:focus{ border-color:var(--gold); box-shadow:0 0 0 3px rgba(185,139,82,0.18); }
-
-  .amount-field input{
-    font-family:'JetBrains Mono', monospace;
-    font-size:24px;
-    font-weight:600;
-    padding:14px 12px;
-  }
-  .amount-wrap{ position:relative; }
-  .amount-wrap .egp{
-    position:absolute; right:14px; top:50%; transform:translateY(-50%);
-    font-family:'JetBrains Mono', monospace;
-    font-size:13px; font-weight:600; color:var(--terracotta);
-    pointer-events:none;
-  }
 
   .row2{ display:flex; gap:12px; }
   .row2 .field{ flex:1; }
 
+  .amount-wrap{ position:relative; }
+  .amount-wrap input{ font-family:'JetBrains Mono', monospace; font-size:20px; font-weight:600; padding:12px 46px 12px 12px; }
+  .amount-wrap .egp{ position:absolute; right:14px; top:50%; transform:translateY(-50%); font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:600; color:var(--terracotta); pointer-events:none; }
+
+  .add-box{
+    border:1.5px dashed var(--olive); border-radius:10px; padding:16px 14px 14px; background:rgba(255,255,255,0.4);
+  }
+  .add-box .field:last-of-type{ margin-bottom:12px; }
+
+  button.btn-add{
+    width:100%; background:transparent; border:1.5px solid var(--terracotta); color:var(--terracotta);
+    padding:12px; border-radius:8px; font-weight:700; font-size:14px; cursor:pointer;
+  }
+  button.btn-add:active{ background:var(--terracotta); color:var(--cream); }
+
+  .cart{ margin-top:4px; }
+  .cart-empty{ font-size:13px; color:#8a8272; text-align:center; padding:14px 0; }
+  .cart-item{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:10px 2px; border-bottom:1px dotted var(--cream2);
+  }
+  .cart-item .info{ font-size:13px; line-height:1.4; }
+  .cart-item .info .apt{ font-weight:700; color:var(--ink); }
+  .cart-item .info .cat{ color:#6b6455; }
+  .cart-item .amt{ font-family:'JetBrains Mono', monospace; font-weight:600; white-space:nowrap; }
+  .cart-item .remove{
+    border:none; background:none; color:#a8402f; font-size:18px; line-height:1; cursor:pointer; padding:2px 6px;
+  }
+  .cart-total{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:12px 2px 4px; margin-top:4px; border-top:1.5px solid var(--olive);
+    font-family:'JetBrains Mono', monospace; font-weight:700; font-size:15px;
+  }
+
   button.submit{
-    width:100%;
-    background:var(--olive);
-    color:var(--cream);
-    border:none;
-    padding:16px;
-    border-radius:8px;
-    font-family:'Manrope', sans-serif;
-    font-weight:700;
-    font-size:15px;
-    letter-spacing:0.02em;
-    cursor:pointer;
-    margin-top:6px;
+    width:100%; background:var(--olive); color:var(--cream); border:none; padding:16px; border-radius:8px;
+    font-family:'Manrope', sans-serif; font-weight:700; font-size:15px; cursor:pointer; margin-top:18px;
   }
   button.submit:active{ background:var(--ink); }
-  button.submit:disabled{ opacity:0.5; }
+  button.submit:disabled{ opacity:0.4; }
 
-  .hint{
-    font-size:12px; color:#6b6455; margin-top:10px; text-align:center;
-  }
+  .hint{ font-size:12px; color:#6b6455; margin-top:10px; text-align:center; }
+  .banner{ background:#fdf1e7; border:1px solid var(--gold); color:var(--terracotta); font-size:13px; padding:12px 14px; border-radius:8px; margin-bottom:16px; line-height:1.5; }
 
-  .banner{
-    background:#fdf1e7; border:1px solid var(--gold); color:var(--terracotta);
-    font-size:13px; padding:12px 14px; border-radius:8px; margin-bottom:16px; line-height:1.5;
-  }
-
-  /* success receipt state */
   .receipt{ display:none; }
   .receipt.show{ display:block; }
-  .receipt .stub{
-    border:1.5px dashed var(--olive);
-    border-radius:8px;
-    padding:18px;
-    margin-top:6px;
-  }
-  .receipt .check{
-    width:40px; height:40px; border-radius:50%; background:var(--olive);
-    display:flex; align-items:center; justify-content:center; margin:0 auto 14px;
-  }
+  .receipt .check{ width:40px; height:40px; border-radius:50%; background:var(--olive); display:flex; align-items:center; justify-content:center; margin:0 auto 14px; }
   .receipt .check svg{ width:20px; height:20px; }
-  .receipt .row{
-    display:flex; justify-content:space-between; padding:7px 0;
-    border-bottom:1px dotted var(--cream2);
-    font-family:'JetBrains Mono', monospace; font-size:13px;
-  }
-  .receipt .row:last-child{ border-bottom:none; }
-  .receipt .row .k{ color:#8a8272; }
-  .receipt .row .v{ color:var(--ink); font-weight:600; }
   .receipt-title{ text-align:center; font-family:'Fraunces', serif; font-size:19px; margin-bottom:2px;}
   .receipt-sub{ text-align:center; font-size:12px; color:#8a8272; margin-bottom:16px; }
+  .stub{ border:1.5px dashed var(--olive); border-radius:8px; padding:16px 14px; margin-top:6px; }
+  .stub .row{ display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dotted var(--cream2); font-family:'JetBrains Mono', monospace; font-size:13px; }
+  .stub .row:last-child{ border-bottom:none; }
+  .stub .row.total{ border-top:1.5px solid var(--olive); border-bottom:none; margin-top:4px; padding-top:10px; font-weight:700; }
+  .stub .k{ color:#8a8272; }
+  .stub .v{ color:var(--ink); font-weight:600; }
   button.again{
     width:100%; background:transparent; border:1.5px solid var(--olive); color:var(--olive);
     padding:13px; border-radius:8px; font-weight:700; font-size:14px; margin-top:16px; cursor:pointer;
   }
 
   [dir="rtl"] .amount-wrap .egp{ right:auto; left:14px; }
+  [dir="rtl"] .amount-wrap input{ padding:12px 12px 12px 46px; }
   [dir="rtl"] select{ background-position:left 14px center; padding-right:12px; padding-left:36px; }
 </style>
 </head>
@@ -220,63 +151,23 @@
     <div class="notch-r"></div>
 
     <div id="configBanner" class="banner" style="display:none;">
-      <span data-en="⚠ Setup not finished yet: open this file's code and paste your Google Apps Script URL into SCRIPT_URL near the top of the &lt;script&gt; tag. See the setup guide."
-            data-ar="⚠ الإعداد لم يكتمل: افتح كود هذا الملف وضع رابط Google Apps Script في SCRIPT_URL أعلى الكود. راجع دليل الإعداد."></span>
+      <span data-en="⚠ Setup not finished yet: paste your Google Apps Script URL into SCRIPT_URL near the top of the script tag."
+            data-ar="⚠ الإعداد لم يكتمل: ضع رابط Google Apps Script في SCRIPT_URL أعلى الكود."></span>
     </div>
 
     <!-- FORM VIEW -->
     <div id="formView">
-      <div class="eyebrow" data-en="Log a payment" data-ar="تسجيل مصروف">Log a payment</div>
-      <h1 data-en="New Expense" data-ar="مصروف جديد">New Expense</h1>
-
-      <div class="field">
-        <label data-en="Apartment" data-ar="الشقة">Apartment</label>
-        <select id="apartment" onchange="handleApartmentChange()">
-          <option value="0/2, C19">0/2, C19</option>
-          <option value="0/3, C19">0/3, C19</option>
-          <option value="1/3, C19">1/3, C19</option>
-          <option value="1/4, C19">1/4, C19</option>
-          <option value="2/1, B10">2/1, B10</option>
-          <option value="other" data-en="Other (type unit)" data-ar="أخرى (اكتب الرقم)">Other (type unit)</option>
-        </select>
-      </div>
-      <div class="field" id="apartmentOtherWrap" style="display:none;">
-        <label data-en="Unit number" data-ar="رقم الوحدة">Unit number</label>
-        <input type="text" id="apartmentOther" placeholder="e.g. 3/1, C19">
-      </div>
-
-      <div class="field">
-        <label data-en="Category" data-ar="البند">Category</label>
-        <select id="category">
-          <option value="electricity" data-en="Electricity" data-ar="كهرباء">Electricity</option>
-          <option value="maintenance" data-en="Maintenance" data-ar="صيانة">Maintenance</option>
-          <option value="water" data-en="Water" data-ar="مياه">Water</option>
-          <option value="internet" data-en="Internet" data-ar="إنترنت">Internet</option>
-          <option value="housekeeping" data-en="Housekeeping" data-ar="هاوس كيبنج">Housekeeping</option>
-          <option value="supplies" data-en="Supplies" data-ar="مستلزمات">Supplies</option>
-          <option value="dryclean" data-en="Dry Clean" data-ar="دراي كلين">Dry Clean</option>
-          <option value="security" data-en="Security" data-ar="أمن / سيكيورتي">Security</option>
-          <option value="compound_admin" data-en="Compound Admin" data-ar="إدارة الكمبوند">Compound Admin</option>
-          <option value="other" data-en="Other" data-ar="أخرى">Other</option>
-        </select>
-      </div>
-
-      <div class="field amount-field">
-        <label data-en="Amount" data-ar="المبلغ">Amount</label>
-        <div class="amount-wrap">
-          <input type="number" id="amount" inputmode="decimal" placeholder="0">
-          <span class="egp">EGP</span>
-        </div>
-      </div>
+      <div class="eyebrow" data-en="Log expenses" data-ar="تسجيل المصروفات">Log expenses</div>
+      <h1 data-en="Today's Expenses" data-ar="مصروفات اليوم">Today's Expenses</h1>
 
       <div class="row2">
         <div class="field">
           <label data-en="Date" data-ar="التاريخ">Date</label>
-          <input type="date" id="date">
+          <input type="date" id="sharedDate">
         </div>
         <div class="field">
           <label data-en="Entered by" data-ar="المُدخِل">Entered by</label>
-          <select id="enteredBy">
+          <select id="sharedEnteredBy">
             <option value="Youssif Tarek">Youssif Tarek</option>
             <option value="Damanhory">Damanhory</option>
             <option value="Mizo">Mizo</option>
@@ -285,30 +176,76 @@
         </div>
       </div>
 
-      <div class="field">
-        <label data-en="Note (optional)" data-ar="ملاحظة (اختياري)">Note (optional)</label>
-        <input type="text" id="note" data-en-ph="e.g. dry clean — sofa cover" data-ar-ph="مثال: دراي كلين — غطاء أريكة" placeholder="e.g. dry clean — sofa cover">
+      <h2 class="section" data-en="Add an expense" data-ar="إضافة مصروف">Add an expense</h2>
+      <div class="add-box">
+        <div class="field">
+          <label data-en="Apartment" data-ar="الشقة">Apartment</label>
+          <select id="apartment" onchange="handleApartmentChange()">
+            <option value="0/2, C19">0/2, C19</option>
+            <option value="0/3, C19">0/3, C19</option>
+            <option value="1/3, C19">1/3, C19</option>
+            <option value="1/4, C19">1/4, C19</option>
+            <option value="2/1, B10">2/1, B10</option>
+            <option value="other" data-en="Other (type unit)" data-ar="أخرى (اكتب الرقم)">Other (type unit)</option>
+          </select>
+        </div>
+        <div class="field" id="apartmentOtherWrap" style="display:none;">
+          <label data-en="Unit number" data-ar="رقم الوحدة">Unit number</label>
+          <input type="text" id="apartmentOther" placeholder="e.g. 3/1, C19">
+        </div>
+
+        <div class="field">
+          <label data-en="Category" data-ar="البند">Category</label>
+          <select id="category">
+            <option value="Electricity" data-en="Electricity" data-ar="كهرباء">Electricity</option>
+            <option value="Maintenance" data-en="Maintenance" data-ar="صيانة">Maintenance</option>
+            <option value="Water" data-en="Water" data-ar="مياه">Water</option>
+            <option value="Internet" data-en="Internet" data-ar="إنترنت">Internet</option>
+            <option value="Housekeeping" data-en="Housekeeping" data-ar="هاوس كيبنج">Housekeeping</option>
+            <option value="Supplies" data-en="Supplies" data-ar="مستلزمات">Supplies</option>
+            <option value="Dry Clean" data-en="Dry Clean" data-ar="دراي كلين">Dry Clean</option>
+            <option value="Security" data-en="Security" data-ar="أمن / سيكيورتي">Security</option>
+            <option value="Compound Admin" data-en="Compound Admin" data-ar="إدارة الكمبوند">Compound Admin</option>
+            <option value="Other" data-en="Other" data-ar="أخرى">Other</option>
+          </select>
+        </div>
+
+        <div class="field amount-field">
+          <label data-en="Amount" data-ar="المبلغ">Amount</label>
+          <div class="amount-wrap">
+            <input type="number" id="amount" inputmode="decimal" placeholder="0">
+            <span class="egp">EGP</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label data-en="Note (optional)" data-ar="ملاحظة (اختياري)">Note (optional)</label>
+          <input type="text" id="note" data-en-ph="e.g. sofa cover" data-ar-ph="مثال: غطاء أريكة" placeholder="e.g. sofa cover">
+        </div>
+
+        <button class="btn-add" onclick="addItem()" data-en="+ Add to list" data-ar="+ إضافة للقائمة">+ Add to list</button>
       </div>
 
-      <button class="submit" id="submitBtn" onclick="submitExpense()" data-en="Log Expense" data-ar="تسجيل المصروف">Log Expense</button>
-      <div class="hint" data-en="Every entry syncs straight to the AirHatch finance sheet." data-ar="كل عملية تسجيل تُحفظ مباشرة في شيت AirHatch المالي.">Every entry syncs straight to the AirHatch finance sheet.</div>
+      <h2 class="section" data-en="This batch" data-ar="القائمة الحالية">This batch</h2>
+      <div class="cart" id="cart">
+        <div class="cart-empty" id="cartEmpty" data-en="No items yet — add your first expense above" data-ar="لا توجد عناصر بعد — أضف أول مصروف بالأعلى">No items yet — add your first expense above</div>
+      </div>
+      <div class="cart-total" id="cartTotal" style="display:none;">
+        <span data-en="Total" data-ar="الإجمالي">Total</span>
+        <span id="cartTotalAmt">0 EGP</span>
+      </div>
+
+      <button class="submit" id="submitBtn" onclick="submitAll()" disabled data-en="Add items to submit" data-ar="أضف عناصر للتسجيل">Add items to submit</button>
+      <div class="hint" data-en="One tap logs every item in the list at once." data-ar="ضغطة واحدة تسجل كل عناصر القائمة دفعة واحدة.">One tap logs every item in the list at once.</div>
     </div>
 
     <!-- SUCCESS VIEW -->
     <div id="receiptView" class="receipt">
-      <div class="check">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M4 12L9.5 17.5L20 6" stroke="#F0EEEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
+      <div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12L9.5 17.5L20 6" stroke="#F0EEEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="receipt-title" data-en="Logged" data-ar="تم التسجيل">Logged</div>
-      <div class="receipt-sub" data-en="Saved to the AirHatch expense sheet" data-ar="تم الحفظ في شيت المصروفات">Saved to the AirHatch expense sheet</div>
-      <div class="stub">
-        <div class="row"><span class="k" data-en="Apartment" data-ar="الشقة">Apartment</span><span class="v" id="rApartment"></span></div>
-        <div class="row"><span class="k" data-en="Category" data-ar="البند">Category</span><span class="v" id="rCategory"></span></div>
-        <div class="row"><span class="k" data-en="Amount" data-ar="المبلغ">Amount</span><span class="v" id="rAmount"></span></div>
-        <div class="row"><span class="k" data-en="Date" data-ar="التاريخ">Date</span><span class="v" id="rDate"></span></div>
-        <div class="row"><span class="k" data-en="By" data-ar="بواسطة">By</span><span class="v" id="rBy"></span></div>
-      </div>
-      <button class="again" onclick="logAnother()" data-en="Log another" data-ar="تسجيل مصروف آخر">Log another</button>
+      <div class="receipt-sub" id="receiptSub">Saved to the AirHatch expense sheet</div>
+      <div class="stub" id="receiptStub"></div>
+      <button class="again" onclick="logAnother()" data-en="Log another batch" data-ar="تسجيل دفعة أخرى">Log another batch</button>
     </div>
 
   </div>
@@ -317,9 +254,10 @@
 <script>
   // ── SETUP: paste your Google Apps Script Web App URL below ──
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxT4ZXxZPay81zuIx9ZBw1NGrIFQ7SQJuoJJ94zcAoHKZ3ixguoMtUrKeujYzwrw-WX/exec";
-  const SHARED_SECRET = "airhatch2026"; // must match the value in Code.gs
+  const SHARED_SECRET = "airhatch2026"; // must match Code.gs
 
   let lang = 'en';
+  let cart = [];
 
   function toggleLang(){
     lang = lang === 'en' ? 'ar' : 'en';
@@ -332,6 +270,7 @@
     });
     const note = document.getElementById('note');
     note.placeholder = lang === 'ar' ? note.getAttribute('data-ar-ph') : note.getAttribute('data-en-ph');
+    renderCart();
   }
 
   function handleApartmentChange(){
@@ -339,66 +278,138 @@
     document.getElementById('apartmentOtherWrap').style.display = v === 'other' ? 'block' : 'none';
   }
 
-  function today(){
-    const d = new Date();
-    return d.toISOString().split('T')[0];
-  }
-  document.getElementById('date').value = today();
+  function today(){ return new Date().toISOString().split('T')[0]; }
+  document.getElementById('sharedDate').value = today();
 
   if(SCRIPT_URL.indexOf('PASTE_YOUR') === 0){
     document.getElementById('configBanner').style.display = 'block';
   }
 
-  function submitExpense(){
+  function addItem(){
     const apartmentSel = document.getElementById('apartment').value;
     const apartment = apartmentSel === 'other' ? document.getElementById('apartmentOther').value.trim() : apartmentSel;
     const categorySel = document.getElementById('category');
-    const category = categorySel.options[categorySel.selectedIndex].text;
+    const category = categorySel.value;
     const amount = document.getElementById('amount').value;
-    const date = document.getElementById('date').value;
-    const enteredBy = document.getElementById('enteredBy').value;
     const note = document.getElementById('note').value;
 
-    if(!apartment || !amount || !date || !enteredBy){
-      alert(lang === 'ar' ? 'من فضلك أكمل كل الحقول المطلوبة' : 'Please fill in all required fields');
+    if(!apartment || !amount || Number(amount) <= 0){
+      alert(lang === 'ar' ? 'أدخل الشقة والمبلغ على الأقل' : 'Enter at least an apartment and amount');
+      return;
+    }
+
+    cart.push({ apartment, category, amount: Number(amount), note });
+
+    document.getElementById('amount').value = '';
+    document.getElementById('note').value = '';
+    document.getElementById('amount').focus();
+
+    renderCart();
+  }
+
+  function removeItem(i){
+    cart.splice(i,1);
+    renderCart();
+  }
+
+  function categoryLabel(catValue){
+    const opt = document.querySelector('#category option[value="'+catValue+'"]');
+    if(!opt) return catValue;
+    return lang === 'ar' ? opt.getAttribute('data-ar') : opt.getAttribute('data-en');
+  }
+
+  function renderCart(){
+    const cartEl = document.getElementById('cart');
+    const emptyEl = document.getElementById('cartEmpty');
+    const totalWrap = document.getElementById('cartTotal');
+    const totalAmt = document.getElementById('cartTotalAmt');
+    const submitBtn = document.getElementById('submitBtn');
+
+    cartEl.querySelectorAll('.cart-item').forEach(n=>n.remove());
+
+    if(cart.length === 0){
+      emptyEl.style.display = 'block';
+      totalWrap.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.textContent = lang === 'ar' ? 'أضف عناصر للتسجيل' : 'Add items to submit';
+      return;
+    }
+
+    emptyEl.style.display = 'none';
+    totalWrap.style.display = 'flex';
+
+    let total = 0;
+    cart.forEach((item, i)=>{
+      total += item.amount;
+      const row = document.createElement('div');
+      row.className = 'cart-item';
+      row.innerHTML =
+        '<div class="info"><span class="apt">'+item.apartment+'</span> — <span class="cat">'+categoryLabel(item.category)+(item.note ? ' · '+item.note : '')+'</span></div>'+
+        '<div style="display:flex; align-items:center; gap:6px;"><span class="amt">'+item.amount+' EGP</span>'+
+        '<button class="remove" onclick="removeItem('+i+')">×</button></div>';
+      cartEl.insertBefore(row, totalWrap);
+    });
+
+    totalAmt.textContent = total + ' EGP';
+    submitBtn.disabled = false;
+    submitBtn.textContent = (lang === 'ar' ? 'تسجيل ' : 'Submit ') + cart.length + (lang === 'ar' ? ' عناصر · ' : ' items · ') + total + ' EGP';
+  }
+
+  function submitAll(){
+    if(cart.length === 0) return;
+    const date = document.getElementById('sharedDate').value;
+    const enteredBy = document.getElementById('sharedEnteredBy').value;
+    if(!date || !enteredBy){
+      alert(lang === 'ar' ? 'من فضلك أدخل التاريخ والمُدخِل' : 'Please fill in the date and entered-by fields');
       return;
     }
     if(SCRIPT_URL.indexOf('PASTE_YOUR') === 0){
-      alert(lang === 'ar' ? 'الإعداد لم يكتمل بعد — راجع دليل الإعداد' : 'Setup isn\'t finished yet — see the setup guide');
+      alert(lang === 'ar' ? 'الإعداد لم يكتمل بعد' : 'Setup isn\'t finished yet — see the setup guide');
       return;
     }
 
-    const btn = document.getElementById('submitBtn');
-    btn.disabled = true;
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
 
     const body = new URLSearchParams({
       secret: SHARED_SECRET,
-      apartment, category, amount, date, enteredBy, note
+      date,
+      enteredBy,
+      items: JSON.stringify(cart)
     });
 
     fetch(SCRIPT_URL, { method:'POST', mode:'no-cors', body })
-      .then(()=> showReceipt(apartment, category, amount, date, enteredBy))
-      .catch(()=> showReceipt(apartment, category, amount, date, enteredBy))
-      .finally(()=> { btn.disabled = false; });
+      .then(()=> showReceipt(date, enteredBy))
+      .catch(()=> showReceipt(date, enteredBy));
   }
 
-  function showReceipt(apartment, category, amount, date, enteredBy){
-    document.getElementById('rApartment').textContent = apartment;
-    document.getElementById('rCategory').textContent = category;
-    document.getElementById('rAmount').textContent = amount + ' EGP';
-    document.getElementById('rDate').textContent = date;
-    document.getElementById('rBy').textContent = enteredBy;
+  function showReceipt(date, enteredBy){
+    const stub = document.getElementById('receiptStub');
+    let total = 0;
+    let rows = '';
+    cart.forEach(item=>{
+      total += item.amount;
+      rows += '<div class="row"><span class="k">'+item.apartment+' · '+categoryLabel(item.category)+'</span><span class="v">'+item.amount+' EGP</span></div>';
+    });
+    rows += '<div class="row total"><span>'+(lang==='ar'?'الإجمالي':'Total')+'</span><span>'+total+' EGP</span></div>';
+    rows += '<div class="row"><span class="k">'+(lang==='ar'?'التاريخ':'Date')+'</span><span class="v">'+date+'</span></div>';
+    rows += '<div class="row"><span class="k">'+(lang==='ar'?'بواسطة':'By')+'</span><span class="v">'+enteredBy+'</span></div>';
+    stub.innerHTML = rows;
+    document.getElementById('receiptSub').textContent = cart.length + (lang==='ar' ? ' عناصر تم حفظها' : ' item(s) saved to the sheet');
+
     document.getElementById('formView').style.display = 'none';
     document.getElementById('receiptView').classList.add('show');
   }
 
   function logAnother(){
-    document.getElementById('amount').value = '';
-    document.getElementById('note').value = '';
-    document.getElementById('date').value = today();
+    cart = [];
+    document.getElementById('sharedDate').value = today();
     document.getElementById('receiptView').classList.remove('show');
     document.getElementById('formView').style.display = 'block';
+    renderCart();
   }
+
+  renderCart();
 </script>
 </body>
 </html>
