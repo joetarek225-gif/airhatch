@@ -307,6 +307,10 @@
     renderCart();
   }
 
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
   function removeItem(i){
     cart.splice(i,1);
     renderCart();
@@ -344,10 +348,10 @@
       const row = document.createElement('div');
       row.className = 'cart-item';
       row.innerHTML =
-        '<div class="info"><span class="apt">'+item.apartment+'</span> — <span class="cat">'+categoryLabel(item.category)+(item.note ? ' · '+item.note : '')+'</span></div>'+
+        '<div class="info"><span class="apt">'+esc(item.apartment)+'</span> — <span class="cat">'+esc(categoryLabel(item.category))+(item.note ? ' · '+esc(item.note) : '')+'</span></div>'+
         '<div style="display:flex; align-items:center; gap:6px;"><span class="amt">'+item.amount+' EGP</span>'+
         '<button class="remove" onclick="removeItem('+i+')">×</button></div>';
-      cartEl.insertBefore(row, totalWrap);
+      cartEl.appendChild(row);
     });
 
     totalAmt.textContent = total + ' EGP';
@@ -389,7 +393,7 @@
     let rows = '';
     cart.forEach(item=>{
       total += item.amount;
-      rows += '<div class="row"><span class="k">'+item.apartment+' · '+categoryLabel(item.category)+'</span><span class="v">'+item.amount+' EGP</span></div>';
+      rows += '<div class="row"><span class="k">'+esc(item.apartment)+' · '+esc(categoryLabel(item.category))+'</span><span class="v">'+item.amount+' EGP</span></div>';
     });
     rows += '<div class="row total"><span>'+(lang==='ar'?'الإجمالي':'Total')+'</span><span>'+total+' EGP</span></div>';
     rows += '<div class="row"><span class="k">'+(lang==='ar'?'التاريخ':'Date')+'</span><span class="v">'+date+'</span></div>';
